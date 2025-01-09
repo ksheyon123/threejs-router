@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from threejsrouter.views import main
+from threejsrouter.views.auth import index
 
 urlpatterns = [
+    path('main/', main.index),
+    path('auth/sign_in/', index.sign_in),
+    path('auth/sign_up/', index.sign_up),
     path('admin/', admin.site.urls),
 ]

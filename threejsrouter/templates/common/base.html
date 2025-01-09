@@ -1,0 +1,30 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 100vh;
+            width : 100vw;
+            margin: 0;
+            padding : 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff;
+        }
+    </style>
+    <title>{% block title %}My Website{% endblock %}</title>
+    <!-- 추가적인 CSS 및 JS 파일 링크 -->
+</head>
+<body>
+    {% if with_header == 'true' %}
+        {% include "common/header.html" %}
+    {% endif %}
+    <main>
+        {% block content %}
+        <!-- 페이지 고유의 내용이 여기에 들어갑니다. -->
+        {% endblock %}
+    </main>
+</body>
+</html>

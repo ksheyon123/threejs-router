@@ -1,0 +1,85 @@
+{% extends 'common/base.html'%}
+{% block title %}<title>Sign In</title>{% endblock %}
+{% block css %}
+<style>
+    .login-container {
+        width: 90%;
+        max-width: 400px;
+        border: 1px solid #808080;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        background-color: white;
+    }
+    .login-container h2 {
+        text-align: center;
+    }
+    .input-group {
+        margin-bottom: 15px;
+    }
+    .input-group label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .input-group input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .login-button {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #98FF98;
+        border: none;
+        color: white;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
+    .login-button:hover {
+        background-color: #66CC66;
+    }
+
+    @media (max-width: 560px) {
+        .login-container {
+            display: none;
+        }
+        .full-screen-login {
+            width: 100%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 0;
+            box-shadow: none;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <button class="login-button">Sign In</button>
+    </div>
+
+    <div class="full-screen-login">
+        <h2 style="text-align: center;">Sign In</h2>
+        <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username-mobile" name="username">
+        </div>
+        <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password-mobile" name="password">
+        </div>
+        <button class="login-button">Sign In</button>
+    </div>
+{% endblock %}
